@@ -16,16 +16,24 @@ class ArtWorkController extends AbstractController
     public function index(ArtWorkRepository $artWorkRepository, CategoryRepository $categoryRepository, int $categoryId){
 
         $category = $categoryRepository->findOneBy([
-            'id' => $categoryId]);
+            'id' => $categoryId
+        ]);
 
-        if($category->getName() == 'tout'){
-            dd($artWorkRepository->findAll());
-        }else{
-            dd($artWorkRepository->findBy( ['category' => $category]));
-        }
+        $artPieces = $category->getName() == 'tout' ? $artWorkRepository->findAll() : $artWorkRepository->findBy(['category' => $category]);
 
         return $this->render('artWorks/index.html.twig', [
-            'controller_name' => 'ArtWorkController',
+            'artPieces' => $artPieces,
+        ]);
+    }
+
+    /**
+     * @Route("/artwork/{artId}", name="artwok.detail")
+     */
+    public function detail(ArtWorkRepository $artWorkRepository, int $artId){
+        $art = $artWorkRepository->findOneBy(['id' => $artId]);
+
+        return $this->render('artWorks/detail.html.twig', [
+            'art' => $art
         ]);
     }
 }

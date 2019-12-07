@@ -1,0 +1,10 @@
+{% extends 'parent.html.twig' %}
+
+{% block content %}
+    <div>
+        <img src="{{ asset('img/artwork/' ~ art.image) }}" class="card-img-top" alt="{{ art.name }}">
+        <h3>{{ art.name }}</h3>
+        <p>{{ art.category.name }}</p>
+        <p>{{ art.description }}</p>
+    </div>
+{% endblock %}

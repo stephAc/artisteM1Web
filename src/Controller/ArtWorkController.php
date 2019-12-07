@@ -21,7 +21,7 @@ class ArtWorkController extends AbstractController
         if($category->getName() == 'tout'){
             dd($artWorkRepository->findAll());
         }else{
-            dd($artWorkRepository->findBy( ['category_id' => $category]));
+            dd($artWorkRepository->findBy( ['category' => $category]));
         }
 
         return $this->render('artWorks/index.html.twig', [

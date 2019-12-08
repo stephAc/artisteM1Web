@@ -42,9 +42,8 @@ class AdminArtWorkController extends AbstractController
 
         if($form->isSubmitted() && $form->isValid()){
             $message = $model->getId() ? "L'oeuvre a été modifié" : "L'oeuvre à été ajouté";
-            $entityManagerInterface->persist($form->getData());
 
-            $model->getId() ? null : $entityManagerInterface->persist($model);
+            $entityManagerInterface->persist($form->getData());
             $entityManagerInterface->flush();
 
             $this->addFlash('notice', $message);

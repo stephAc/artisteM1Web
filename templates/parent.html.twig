@@ -18,10 +18,9 @@
     {{ render(controller('App\\Controller\\NavBarController:navBar')) }}
 
     <div class="container flex-grow-1">
-        <div class="row">
             {% block content %}{% endblock %}
-        </div>
     </div>
+
     {% include 'inc/footer.html.twig' %}
 
     {{ encore_entry_script_tags('app') }}

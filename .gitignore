@@ -22,4 +22,4 @@ yarn-error.log
 ###< symfony/webpack-encore-bundle ###
 
 
-/public/img/artwork/
+/public/img/artwork/*

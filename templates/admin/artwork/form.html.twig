@@ -1,0 +1,28 @@
+{% extends 'admin.html.twig' %}
+
+{% block content %}
+        <div class="col">
+            <h1>Formulaire des produits</h1>
+            {{ form_start(form, {attr : {novalidate: 'novalidate'} }) }}
+            <p>
+                {{ form_label(form.name, 'Nom: ') }}
+                {{ form_widget(form.name) }}
+            </p>
+            <p>
+                {{ form_label(form.description, 'Description: ') }}
+                {{ form_widget(form.description) }}
+            </p>
+            <p>
+                {{ form_label(form.image, 'Image: ') }}
+                {{ form_widget(form.image) }}
+            </p>
+            <p>
+                {{ form_label(form.category, 'Categorie: ') }}
+                {{ form_widget(form.category) }}
+            </p>
+            <p>
+                <input type="submit" value="Valider" class="btn badge-info"/>
+            </p>
+            {{ form_end(form) }}
+        </div>
+{% endblock %}

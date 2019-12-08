@@ -4,12 +4,11 @@
         <div class="row">
             <div class="col">
                 <h1>Gestion des oeuvres</h1>
+                {% include 'inc/flash.message.html.twig' %}
+                <p class="text-right">
+                    <a href="{{ url('admin.artwork.form') }}" class="btn btn-primary">Ajouter</a>
+                </p>
 
-                {#
-                   <p class="text-right">
-                        <a href="{{ url('admin.product.form') }}" class="btn btn-primary">Ajouter</a>
-                    </p>
-                #}
                 <table class="table table-striped">
                     <tr>
                         <th>Nom</th>
@@ -29,8 +28,8 @@
                                 <li>{{ artPiece.category.name | capitalize }}</li>
                             </td>
                             <td>
-                                <a href="#" class="btn btn-warning">Modifier</a>
-                                <a href="#" class="btn btn-danger">Supprimer</a>
+                                <a href="{{ url('admin.artwork.form.update', {id: artPiece.id}) }}" class="btn btn-warning">Modifier</a>
+                                <a href="{{ url('admin.artwork.remove', {id: artPiece.id}) }}" class="btn btn-danger">Supprimer</a>
                             </td>
                         </tr>
                     {% endfor %}

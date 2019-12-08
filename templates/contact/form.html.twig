@@ -1,0 +1,28 @@
+{% extends 'admin.html.twig' %}
+
+{% block content %}
+    <div class="col">
+        <h2>Contact</h2>
+
+        {% include 'inc/flash.message.html.twig' %}
+
+        {{ form_start(form, {attr: {novalidate: 'novalidate'} }) }}
+        <p>
+            {{ form_label(form.lastname, "Nom") }}
+            {{ form_widget(form.lastname) }}
+        </p>
+        <p>
+            {{ form_label(form.email, "Email") }}
+            {{ form_widget(form.email) }}
+        </p>
+        <p>
+            {{ form_label(form.message, "Message") }}
+            {{ form_widget(form.message) }}
+        </p>
+        <p>
+            <input type="submit" value="Valider" class="btn badge-info">
+        </p>
+        {{ form_end(form) }}
+    </div>
+
+{% endblock %}

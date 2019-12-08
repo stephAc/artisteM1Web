@@ -1,0 +1,11 @@
+{% extends 'admin.html.twig' %}
+
+{% block content %}
+    <div class="col">
+        <h2>Administrateur</h2>
+        <p>
+            <a href="{{ url('admin.artwork.index') }}">Gestion des oeuvres</a> <br />
+            <a href="{{ url('admin.exhibition.index') }}">Gestion des exhibitions</a>
+        </p>
+    </div>
+{% endblock %}

@@ -1,0 +1,11 @@
+<div class="card card-body" style="margin-bottom: 5px">
+    <div class="card-header">
+        {{ exhibition.exhibitionDate | date('d/m/Y')}}
+    </div>
+    <div class="card-body">
+        <blockquote class="blockquote mb-0">
+            <p>{{ exhibition.name }}</p>
+            <footer class="blockquote-footer">{{ exhibition.description }} </footer>
+        </blockquote>
+    </div>
+</div>

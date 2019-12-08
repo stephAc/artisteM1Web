@@ -1,0 +1,25 @@
+{% extends 'admin.html.twig' %}
+
+{% block content %}
+    <div class="col">
+        <h2>Formulaire des expositions</h2>
+        {{ form_start(form, {attr: {novalidate: 'novalidate'} }) }}
+            <p>
+                {{ form_label(form.name, "Nom de l'exposition") }}
+                {{ form_widget(form.name) }}
+            </p>
+            <p>
+                {{ form_label(form.description, "Description") }}
+                {{ form_widget(form.description) }}
+            </p>
+            <p>
+                {{ form_label(form.exhibitionDate, "Date de l'exposition") }}
+                {{ form_widget(form.exhibitionDate) }}
+            </p>
+            <p>
+                <input type="submit" value="Valider" class="btn badge-info">
+            </p>
+        {{ form_end(form) }}
+    </div>
+
+{% endblock %}
